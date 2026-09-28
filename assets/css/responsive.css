@@ -39,12 +39,8 @@
     }
 
     .footer-top-grid {
-        grid-template-columns: 1.2fr 1fr 1fr;
-    }
-
-    .footer-col.touch-col {
-        grid-column: span 3;
-        margin-top: 20px;
+        grid-template-columns: 1.3fr repeat(4, 1fr);
+        gap: 24px;
     }
 }
 
@@ -122,10 +118,6 @@
     .footer-col.brand-col {
         grid-column: span 2;
     }
-
-    .footer-col.touch-col {
-        grid-column: span 2;
-    }
 }
 
 /* Mobile Devices (max-width: 767px) */
@@ -200,8 +192,7 @@
         grid-template-columns: 1fr;
     }
 
-    .footer-col.brand-col,
-    .footer-col.touch-col {
+    .footer-col.brand-col {
         grid-column: span 1;
     }
 

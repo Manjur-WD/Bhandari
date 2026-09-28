@@ -139,13 +139,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const regionInfo = pin.getAttribute('data-region');
                 mapTooltip.textContent = regionInfo;
                 mapTooltip.style.opacity = '1';
-                
+
                 const pinRect = pin.getBoundingClientRect();
                 const wrapperRect = mapWrapper.getBoundingClientRect();
-                
+
                 const posX = pinRect.left - wrapperRect.left - (mapTooltip.offsetWidth / 2) + 10;
                 const posY = pinRect.top - wrapperRect.top - 36;
-                
+
                 mapTooltip.style.left = `${Math.max(10, posX)}px`;
                 mapTooltip.style.top = `${posY}px`;
             });
