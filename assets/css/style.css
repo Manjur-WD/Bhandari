@@ -1111,7 +1111,7 @@ h6 {
 .solution-card:hover .card-arrow-btn {
     background: var(--color-primary-lime);
     color: #122114;
-    transform: translateX(4px);
+    transform: translateY(-3px);
 }
 
 /* ==================== SECTION 4: PROCESS FLOW (CHEVRON STEPS) ==================== */
@@ -1513,7 +1513,7 @@ h6 {
 .qc-step-box:hover {
     background: rgba(141, 198, 63, 0.12);
     border-color: var(--color-primary-lime);
-    transform: translateX(6px);
+    transform: translateY(-4px);
 }
 
 .qc-num {
@@ -1607,7 +1607,7 @@ h6 {
 
 .case-link:hover {
     color: var(--color-primary-lime-hover);
-    transform: translateX(4px);
+    transform: translateY(-2px);
 }
 
 /* ==================== SECTION 10: SUSTAINABILITY & GLOBAL PRESENCE ==================== */
@@ -1922,7 +1922,7 @@ h6 {
 
 .footer-links a:hover {
     color: var(--color-primary-lime);
-    padding-left: 4px;
+    transform: translateY(-2px);
 }
 
 .footer-connect-links a i {
