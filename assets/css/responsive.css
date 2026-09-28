@@ -1,0 +1,228 @@
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Large Desktop & Laptops (max-width: 1280px) */
+@media (max-width: 1280px) {
+    .main-nav .nav-list {
+        gap: 14px;
+    }
+
+    .btn-quote {
+        padding: 8px 16px;
+        font-size: 0.82rem;
+    }
+}
+
+/* Large Tablets & Small Laptops (max-width: 1199px) */
+@media (max-width: 1199px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .hero-counter-controls {
+        grid-column: span 2;
+        justify-content: flex-end;
+    }
+
+    .solution-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reasons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-top-grid {
+        grid-template-columns: 1.2fr 1fr 1fr;
+    }
+
+    .footer-col.touch-col {
+        grid-column: span 3;
+        margin-top: 20px;
+    }
+}
+
+/* Tablets (max-width: 991px) */
+@media (max-width: 991px) {
+    .section-padding {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .main-nav, .lang-selector, .btn-quote {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .hero-media-wrapper {
+        justify-content: flex-start;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section-header-split {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-header-split .split-right.right-align {
+        text-align: left;
+    }
+
+    .products-dual-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rfq-wrapper {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+        gap: 36px;
+    }
+
+    .quality-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .quality-image-wrapper img {
+        height: 240px;
+    }
+
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dual-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-top-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-col.brand-col {
+        grid-column: span 2;
+    }
+
+    .footer-col.touch-col {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .brand-logo {
+        padding: 6px 12px;
+    }
+
+    .site-logo-img {
+        height: 38px;
+        max-width: 190px;
+    }
+
+    .section-padding {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .section-heading {
+        font-size: 1.85rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-pillar {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 14px;
+        padding-right: 0;
+    }
+
+    .hero-counter-controls {
+        grid-column: span 1;
+        justify-content: space-between;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .mini-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .eco-icons-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col.brand-col,
+    .footer-col.touch-col {
+        grid-column: span 1;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta-group .btn {
+        width: 100%;
+    }
+}
