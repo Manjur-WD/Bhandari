@@ -1,0 +1,701 @@
+/* ==========================================================================
+   DESIGN-3: COMPLETE MOBILE RESPONSIVE ADAPTATIONS & OFF-CANVAS DRAWER
+   Brand: Bhandari Export
+   Theme: Pure White & Architectural Design-2 Signature Palette
+   ========================================================================== */
+
+/* ==================== MOBILE OFF-CANVAS DRAWER STYLES (DARK THEME) ==================== */
+.mobile-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 9998;
+}
+
+.mobile-nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(380px, 88vw);
+    height: 100vh;
+    background: #111813;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.7);
+    transform: translateX(100%);
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-drawer.open {
+    transform: translateX(0);
+}
+
+.mobile-drawer-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #111813;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.mobile-drawer-logo img {
+    filter: brightness(0) invert(1);
+}
+
+.mobile-drawer-close {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.mobile-drawer-close:hover {
+    background: var(--color-lime);
+    color: #111813;
+    border-color: var(--color-lime);
+}
+
+.mobile-menu-links {
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.mobile-nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mobile-menu-link,
+.mobile-menu-toggle-trigger {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    padding: 13px 12px;
+    border-radius: var(--radius-xs);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active,
+.mobile-dropdown-item.active .mobile-menu-toggle-trigger {
+    color: var(--color-lime);
+    background: rgba(141, 198, 63, 0.12);
+}
+
+.mobile-arrow {
+    font-size: 0.72rem;
+    color: var(--color-lime);
+    transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-item.active .mobile-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    margin: 0 0 8px;
+    padding: 0 8px;
+}
+
+.mobile-sublink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #9eb1a2;
+    border-radius: var(--radius-xs);
+    transition: all var(--transition-fast);
+}
+
+.mobile-sublink i {
+    color: var(--color-lime);
+    font-size: 0.72rem;
+}
+
+.mobile-sublink:hover {
+    color: #ffffff;
+    background: rgba(141, 198, 63, 0.15);
+    padding-left: 16px;
+}
+
+.mobile-drawer-footer {
+    padding: 20px 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0d140f;
+    margin-top: auto;
+}
+
+.mobile-contact-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.mobile-contact-chip {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px 12px;
+    border-radius: 99px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-fast);
+}
+
+.mobile-contact-chip:hover {
+    border-color: var(--color-lime);
+    color: var(--color-lime);
+    background: rgba(141, 198, 63, 0.15);
+}
+
+/* ==================== 1. BREAKPOINT: <= 1280px (LAPTOPS & SMALL DESKTOPS) ==================== */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .nav-links-menu {
+        gap: 18px;
+    }
+
+    .nav-item-link {
+        font-size: 0.8rem;
+    }
+
+    .about-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .stats-center-media-wrap {
+        grid-column: span 2;
+        max-width: 650px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .stats-media-frame {
+        height: 400px;
+    }
+
+    .workflow-node-item {
+        flex: 0 1 calc(33.333% - 28px);
+        max-width: 320px;
+    }
+
+    .footer-brand-columns-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    }
+}
+
+/* ==================== 2. BREAKPOINT: <= 992px (TABLETS) ==================== */
+@media (max-width: 992px) {
+    /* Hide Top Trust Bar in Mobile & Tablet View */
+    .ravox-top-bar {
+        display: none !important;
+    }
+
+    /* Header & Mobile Toggle */
+    .nav-links-menu,
+    .nav-action-group .btn-ravox-lime {
+        display: none;
+    }
+
+    .mobile-hamburger-btn {
+        display: flex;
+    }
+
+    .navbar-inner {
+        height: 72px;
+    }
+
+    /* Hero Section */
+    .ravox-hero-section {
+        padding: 30px 0 60px;
+    }
+
+    .hero-giant-title {
+        font-size: clamp(2.4rem, 5.5vw, 4rem);
+        line-height: 1.05;
+    }
+
+    .hero-rotating-badge-box {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 15px 0 25px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .hero-split-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .hero-media-card {
+        height: 380px;
+    }
+
+    /* Section 2: About & Stats */
+    .ravox-about-stats-section {
+        padding: 70px 0;
+    }
+
+    .about-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .stats-center-media-wrap {
+        grid-column: span 1;
+        max-width: 100%;
+    }
+
+    .stats-media-frame {
+        height: 360px;
+    }
+
+    /* Section 3: Who We Work With */
+    .ravox-solutions-section {
+        padding: 70px 0;
+    }
+
+    .industry-4grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Section 4: Workflow 7 Nodes */
+    .ravox-workflow-section {
+        padding: 70px 0;
+    }
+
+    .workflow-nodes-grid {
+        gap: 36px 20px;
+    }
+
+    .workflow-node-item {
+        flex: 0 1 calc(50% - 20px);
+        max-width: 320px;
+    }
+
+    /* Section 5: What We Manufacture */
+    .ravox-showcase-section {
+        padding: 70px 0;
+    }
+
+    .manufacture-3grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .manufacture-card-top-img {
+        height: 220px;
+    }
+
+    /* Section 6: RFQ & 10 Reasons */
+    .ravox-rfq-section {
+        padding: 70px 0;
+    }
+
+    .rfq-preferences-2grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Section 7: Quality Assurance */
+    .quality-stages-section {
+        padding: 70px 0;
+    }
+
+    .quality-stages-4stack {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Section 8: Case Studies */
+    .case-studies-section {
+        padding: 70px 0;
+    }
+
+    .cases-3horizontal-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Section 9: Sustainability & Radar Map */
+    .sustain-global-section {
+        padding: 70px 0;
+    }
+
+    .sustain-global-2grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Section 10: Giant CTA Banner */
+    .ravox-giant-cta-section {
+        padding: 80px 0;
+    }
+
+    .cta-giant-headline {
+        font-size: clamp(2.6rem, 6vw, 4.5rem);
+        margin-bottom: 30px;
+    }
+
+    /* Footer */
+    .footer-inquiry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-inquiry-grid .btn-ravox-lime {
+        grid-column: span 2;
+    }
+
+    .footer-brand-columns-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* ==================== 3. BREAKPOINT: <= 768px (MOBILE PHONES) ==================== */
+@media (max-width: 768px) {
+    /* Top Trust Bar Hidden */
+    .ravox-top-bar {
+        display: none !important;
+    }
+
+    /* Container Spacing */
+    .container {
+        padding: 0 18px;
+    }
+
+    /* Hero */
+    .hero-giant-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        line-height: 1.08;
+    }
+
+    .hero-media-card {
+        height: 290px;
+    }
+
+    .hero-media-live-badge {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        justify-content: center;
+    }
+
+    .hero-action-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-action-row .btn-ravox-lime,
+    .hero-action-row .btn-ravox-outline {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-rating-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* Section Split Header */
+    .section-split-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 36px;
+    }
+
+    .section-heading-ravox {
+        font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+    }
+
+    /* Section 2: About & Stats */
+    .giant-outline-number {
+        font-size: clamp(4.5rem, 14vw, 6.5rem);
+    }
+
+    .giant-number-caption {
+        font-size: 1.3rem;
+    }
+
+    .stats-media-frame {
+        height: 300px;
+    }
+
+    .stats-floating-card {
+        position: relative;
+        inset: auto;
+        margin-top: 12px;
+    }
+
+    /* Section 3: Who We Work With */
+    .industry-4grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-ravox-card {
+        padding: 24px 20px;
+    }
+
+    /* Section 4: Workflow 7 Nodes */
+    .workflow-node-item {
+        flex: 0 1 100%;
+        max-width: 100%;
+    }
+
+    .workflow-node-orbit-wrap {
+        width: 130px;
+        height: 130px;
+    }
+
+    .workflow-node-core {
+        width: 98px;
+        height: 98px;
+    }
+
+    .core-dark,
+    .core-lime-active {
+        font-size: 1.6rem;
+    }
+
+    .process-copy-box {
+        padding: 18px 20px;
+        font-size: 0.92rem;
+    }
+
+    /* Section 5: What We Manufacture */
+    .manufacture-card-body {
+        padding: 24px 20px;
+    }
+
+    .manufacture-h3-title {
+        font-size: 1.5rem;
+    }
+
+    .manufacture-items-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Section 6: RFQ & 10 Reasons */
+    .buyer-pref-10grid {
+        grid-template-columns: 1fr;
+    }
+
+    .enquiry-form-card {
+        padding: 24px 18px;
+    }
+
+    .rfq-grid-form {
+        grid-template-columns: 1fr;
+    }
+
+    .rfq-grid-form .full-col {
+        grid-column: span 1;
+    }
+
+    /* Section 7: QA Stages */
+    .quality-stages-4stack {
+        grid-template-columns: 1fr;
+    }
+
+    .quality-stage-card-item {
+        padding: 24px 20px;
+    }
+
+    /* Section 8: Case Studies */
+    .case-card-img-wrap {
+        height: 190px;
+    }
+
+    .case-card-body-content {
+        padding: 20px;
+    }
+
+    /* Section 9: Sustainability & Global Map */
+    .global-map-card-box {
+        padding: 24px 18px;
+    }
+
+    .global-regions-badge-row {
+        gap: 6px;
+    }
+
+    /* Section 10: Giant CTA Banner */
+    .cta-giant-headline {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+    }
+
+    .cta-floating-pills-row {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .cta-floating-pill {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 0.88rem;
+    }
+
+    /* Footer */
+    .global-dark-footer {
+        padding: 60px 0 24px;
+    }
+
+    .footer-top-inquiry-box {
+        padding: 22px 18px;
+        margin-bottom: 40px;
+    }
+
+    .footer-inquiry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inquiry-grid .btn-ravox-lime {
+        grid-column: span 1;
+        width: 100%;
+    }
+
+    .footer-brand-columns-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-bottom: 40px;
+    }
+
+    .footer-bottom-legal-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Floating Actions */
+    .floating-actions-container {
+        bottom: 18px;
+        right: 18px;
+        gap: 10px;
+    }
+
+    .float-action-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 1.15rem;
+    }
+}
+
+/* ==================== 4. BREAKPOINT: <= 480px (TINY MOBILES) ==================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 14px;
+    }
+
+    .brand-img {
+        height: 32px;
+    }
+
+    .mobile-hamburger-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .hero-media-card {
+        height: 230px;
+    }
+
+    .stats-media-frame {
+        height: 240px;
+    }
+
+    .est-tag-badge {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+    }
+
+    .giant-outline-number {
+        font-size: 4.2rem;
+    }
+
+    .metric-pill-card {
+        padding: 8px 16px;
+    }
+
+    .metric-pill-label {
+        font-size: 0.85rem;
+    }
+
+    .metric-pill-value {
+        font-size: 1.25rem;
+    }
+}
